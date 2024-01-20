@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  chatbot:
+    image: leslliesayrus/chatbot:python3.10.2
+    ports:
+      - "8000:8000"
