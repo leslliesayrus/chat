@@ -79,7 +79,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - C:\Users\rodrigo.pedrosa_powe\Documents\kafka-spark:/home/jovyan/work
+      - .:/home/jovyan/work
     extra_hosts:
       - "host.docker.internal:10.0.2.64" 
 
