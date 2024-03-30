@@ -6,7 +6,7 @@ import os
 
 url = 'https://fdqmwzn8q6.execute-api.us-east-1.amazonaws.com/dev'
 
-st.title("Projeto para leads")
+st.title("Avaliando o projeto de Leads")
 api_key = os.getenv('API_KEY')
 llm = ChatOpenAI(temperature = 0.3, api_key = api_key, model = "gpt-4-1106-preview")
 
@@ -23,7 +23,7 @@ total_leads = st.text_input('Total de Leads:')
 new_leads = st.text_input('Novos Leads:')
 
 # Botão "Enviar"
-if st.button('Enviar'):
+if st.button('Enviar dados para a Inteligência Artificial'):
     input_user = f"""
     - setor: {sector}
     - tamanho: {size}
@@ -161,8 +161,8 @@ responda apenas o numero da temperatura.
     answer = llm.invoke(query)
 
     # Exibindo as informações concatenadas
-    st.write('Informações Enviadas:')
-    st.write(answer.content)
+    st.write('Resposta do modelo:')
+    st.write("A temperatura deste perfil é: ", answer.content)
 
     data = {
                 'query': input_user,
